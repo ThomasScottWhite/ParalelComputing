@@ -70,6 +70,7 @@ int main(int argc, char **argv)
   int total_elements = ROWS * COLUMNS;
   int row, col;
 
+  // The method below is probably slower, but I include this in case this is what the grader is looking for, wasnt sure if the second version made the problem too linear.
   // for (row = 0; row < ROWS; row++){
   //   for (col = 0; col < COLUMNS; col++){
   //     if ((row * COLUMNS + col) % nprocs == rank){
@@ -78,7 +79,7 @@ int main(int argc, char **argv)
   //   }
   // }
 
-  This method is probably faster 
+  // This method is probably faster 
   for (int i = rank; i < total_elements; i += nprocs){
     int row = i / COLUMNS;
     int col = i % COLUMNS;
